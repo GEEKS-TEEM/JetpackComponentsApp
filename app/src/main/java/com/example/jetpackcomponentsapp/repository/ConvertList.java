@@ -23,12 +23,12 @@ public class ConvertList {
 
         return itemList;
     }
+    /*
+    public static LiveData<List<CustomModel>> toLiveDataListModel(LiveData<List<CustomEntity>> localList ) {
 
-    /*public static LiveData<List<CustomModel>> toLiveDataListModel(LiveData<List<CustomEntity>> localList ) {
+    }
 
-    }*/
-
-    /*public static CustomEntity  toEntity(CustomModel customModel) {
+    public static CustomEntity  toEntity(CustomModel customModel) {
         if (customModel.getId() == null) {
             return new CustomEntity(
                     customModel.getName(),
@@ -42,5 +42,6 @@ public class ConvertList {
                     customModel.getIcon()
             );
         }
-    }*/
+    }
+    */
 }
