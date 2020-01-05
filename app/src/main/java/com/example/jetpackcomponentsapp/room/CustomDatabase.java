@@ -8,5 +8,5 @@ import androidx.room.RoomDatabase;
         version = 1
 )
 public abstract class CustomDatabase extends RoomDatabase {
-
+    //TODO: Finish Room Database class
 }

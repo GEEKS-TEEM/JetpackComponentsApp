@@ -29,7 +29,7 @@ public class ConvertList {
         );
     }
 
-    public static CustomEntity  toEntity(CustomModel customModel) {
+    public static CustomEntity toEntity(CustomModel customModel) {
         if (customModel.getId() <= 0) {
             return new CustomEntity(
                     customModel.getName(),
