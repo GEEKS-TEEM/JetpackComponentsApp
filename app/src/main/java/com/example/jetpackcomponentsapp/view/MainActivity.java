@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.jetpackcomponentsapp.MainViewModel;
 import com.example.jetpackcomponentsapp.R;
+import com.example.jetpackcomponentsapp.view.fragment.AddFragment;
 import com.example.jetpackcomponentsapp.view.fragment.MainFragment;
+import com.example.jetpackcomponentsapp.view.fragment.UpdateFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,11 +40,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void callAddFragment() {
-        Toast.makeText(this,"callAddFragment()", Toast.LENGTH_SHORT).show();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container, AddFragment.newInstance())
+                .addToBackStack("AddFragment").commit();
     }
 
     public void  callUpdateFragment() {
-        Toast.makeText(this,"callUpdateFragment()", Toast.LENGTH_SHORT).show();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container, UpdateFragment.newInstance())
+                .addToBackStack("UpdateFragment").commit();
     }
 
     @Override
