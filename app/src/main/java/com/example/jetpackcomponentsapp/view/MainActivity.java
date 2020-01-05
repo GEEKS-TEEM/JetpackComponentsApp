@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void  callUpdateFragment() {
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.container, UpdateFragment.newInstance())
-                .addToBackStack("UpdateFragment").commit();
+        UpdateFragment
+                .newInstance()
+                .show(getSupportFragmentManager().beginTransaction(),"UpdateFragment");
     }
 
     @Override
