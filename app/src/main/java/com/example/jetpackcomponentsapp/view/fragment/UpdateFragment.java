@@ -1,9 +1,11 @@
 package com.example.jetpackcomponentsapp.view.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -53,6 +55,8 @@ public class UpdateFragment extends DialogFragment {
             public void onChanged(CustomModel item) {
                 binding.editText.setText(item.getName());
                 binding.editText.requestFocus();
+                binding.editText.selectAll();
+                showSoftKeyboard();
             }
         });
 
@@ -60,8 +64,19 @@ public class UpdateFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 viewModel.updateItem();
+                hideSoftKeyboard();
                 dismiss();
             }
         });
+    }
+
+    private void showSoftKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    private void hideSoftKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
     }
 }
