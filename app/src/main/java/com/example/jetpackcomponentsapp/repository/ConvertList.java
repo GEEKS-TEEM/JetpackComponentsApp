@@ -22,10 +22,10 @@ public class ConvertList {
 
         return itemList;
     }
-    public static LiveData<List<CustomModel>> toLiveDataListModel(LiveData<List<CustomEntity>> localList ) {
+    public static LiveData<List<CustomModel>> toLiveDataListModel(LiveData<List<CustomEntity>> localList) {
         return Transformations.map(
                 localList,
-                ConvertList::toEntity
+                ConvertList::toListModel
         );
     }
 
