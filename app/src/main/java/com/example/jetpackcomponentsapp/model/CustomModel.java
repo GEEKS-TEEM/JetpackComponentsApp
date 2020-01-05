@@ -10,6 +10,7 @@ public class CustomModel {
     int icon;
 
     public CustomModel(String name) {
+        this.id = 0;
         this.name = name;
         this.icon = R.drawable.ic_launcher_foreground;
     }

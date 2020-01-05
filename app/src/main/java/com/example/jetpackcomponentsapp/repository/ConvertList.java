@@ -8,7 +8,6 @@ import com.example.jetpackcomponentsapp.room.CustomEntity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ConvertList {
 
@@ -23,13 +22,15 @@ public class ConvertList {
 
         return itemList;
     }
-    /*
     public static LiveData<List<CustomModel>> toLiveDataListModel(LiveData<List<CustomEntity>> localList ) {
-
+        return Transformations.map(
+                localList,
+                ConvertList::toEntity
+        );
     }
 
     public static CustomEntity  toEntity(CustomModel customModel) {
-        if (customModel.getId() == null) {
+        if (customModel.getId() <= 0) {
             return new CustomEntity(
                     customModel.getName(),
                     customModel.getIcon()
@@ -43,5 +44,4 @@ public class ConvertList {
             );
         }
     }
-    */
 }
