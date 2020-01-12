@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.jetpackcomponentsapp.MainViewModel;
 import com.example.jetpackcomponentsapp.R;
 import com.example.jetpackcomponentsapp.databinding.AddBinder;
+import com.example.jetpackcomponentsapp.model.CustomModel;
 
 public class AddFragment extends Fragment {
 
@@ -48,7 +49,11 @@ public class AddFragment extends Fragment {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"AddFragment",Toast.LENGTH_SHORT).show();
+                viewModel.insertItem(
+                        new CustomModel(
+                            binding.editText.getText().toString()
+                        )
+                );
                 hideSoftKeyboard();
                 getActivity().getSupportFragmentManager().popBackStack();
             }

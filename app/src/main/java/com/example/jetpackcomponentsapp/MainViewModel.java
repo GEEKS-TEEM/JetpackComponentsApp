@@ -20,10 +20,12 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application) {
         super(application);
+        customRepository = CustomRepository.getInstance(application);
         liveList = new MutableLiveData();
         liveUpdate = new MutableLiveData<>();
     }
 
+    @Deprecated
     public void setItems() {
         List<CustomModel> staticData = new ArrayList<>();
         staticData.clear();
@@ -47,22 +49,23 @@ public class MainViewModel extends AndroidViewModel {
         return liveUpdate;
     }
 
-    public void insertItem() {
-
+    public void insertItem(CustomModel item) {
+        customRepository.insert(item);
     }
 
     public void updateItem() {
-
+        customRepository.update(liveUpdate.getValue());
     }
     public void deleteItem(CustomModel item) {
-
+        customRepository.delete(item);
     }
 
     public void deleteAll() {
-
+        customRepository.deleteAll();
     }
 
     public LiveData<List<CustomModel>> getItems() {
-        return liveList;
+        //return liveList;
+        return customRepository.getAll();
     }
 }

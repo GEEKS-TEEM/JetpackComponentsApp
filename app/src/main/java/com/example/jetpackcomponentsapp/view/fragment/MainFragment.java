@@ -101,6 +101,6 @@ public class MainFragment extends Fragment implements CustomListeners {
 
     @Override
     public void onDelete(CustomModel item, int position) {
-        Toast.makeText(getContext(),"onDelete()", Toast.LENGTH_SHORT).show();
+        viewModel.deleteItem(item);
     }
 }

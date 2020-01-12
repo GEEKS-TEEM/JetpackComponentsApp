@@ -1,7 +1,6 @@
 package com.example.jetpackcomponentsapp.view;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        viewModel.setItems();
+        //viewModel.setItems();
     }
 
     private void callMainFragment() {
